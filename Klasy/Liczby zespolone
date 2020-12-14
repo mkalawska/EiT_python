@@ -1,52 +1,27 @@
-from Liczby_zespolone import Complex 
+import math
+class Complex:
+    def __init__(self,re, im=0.0):
+            self.re = int(re)
+            self.im = int(im)
+#dodawanie
+    def suma(self, inne):
+        return Complex(self.re + inne.re,
+                            self.im + inne.im)
+#odejmowanie
+    def roznica(self, inne):
+        return Complex(self.re - inne.re,
+                            self.im - inne.im)
 
-re = input("Podaj pierwszy element: ")
-im = input("Podaj drugi element: ")
+#mnożenie
+    def iloczyn(self, inne):
+        return Complex(self.re*inne.re - self.im*inne.im,
+                            self.im*inne.re + self.im*inne.im)
 
-object1 = Complex(re, im)
+#dzielenie
+    def iloraz(self, inne):
+        r=float(inne.re**2 + inne.im**2)
+        return Complex((self.re*inne.re+self.im*inne.im)/r, (self.im*inne.re - self.re*inne.im)/r)
 
-re1=input("Podaj pierwszy element: ")
-im1=input("Podaj drugi element: ")
-
-object2 = Complex(re1, im1)
-
-suma = object1.suma(object2)
-
-roznica = object1.roznica(object2)
-
-iloczyn = object1.iloczyn(object2)
-
-iloraz = object1.iloraz(object2)
-
-potega = object1.potega()
-
-print("Wybierz opcje: ")
-print("1. Dodawanie ")
-print("2. Odejmowanie ")
-print("3. Mnożenie ")
-print("4. Dzielenie ")
-print("5. Potęgowanie ")
-
-
-while True:
-    option = input("Wybierz opcje: ")
-
-
-    if option == '1':
-        print("Suma: :", suma.re, suma.im)
-
-    elif option == '2':
-        print("Roznica: ", roznica.re, roznica.im)
-
-    elif option == '3':
-        print("Iloczyn: ", iloczyn.re, iloczyn.im)
-
-    elif option == '4':
-        print("iloraz: ", iloraz.re, iloraz.im)
-
-    elif  option == '5':
-        print("potega: ", potega)
-    break
-
-else:
-    print("Invalid Input")
+#potęgowanie
+    def potega(self):
+        return math.sqrt(self.re**2 + self.im**2)
