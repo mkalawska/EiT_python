@@ -1,0 +1,11 @@
+import numpy as np
+from random import randint
+
+macierz = []
+macierz = np.random.random((8,8))
+print("Macierz 1: ")
+print(macierz)
+
+'Wyznacznik macierzy'
+print("Wyznacznik macierzy: ")
+print(np.linalg.det(macierz))
