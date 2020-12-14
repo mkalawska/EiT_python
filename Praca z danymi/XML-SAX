@@ -1,0 +1,68 @@
+import xml.sax
+class Book(xml.sax.ContentHandler):
+    def __init__(self):
+        self.CurrentData = ""
+        self.Author = ""
+        self.Title = ""
+        self.Genre = ""
+        self.Price = ""
+        self.PublishDate = ""
+        self.description = ""
+
+
+# Call when an element starts
+    def startElement(self, tag, attributes):
+        self.CurrentData = tag
+        if tag == "Book":
+            id = attributes["id"]
+            print("id:",id )
+
+
+    # Call when an elements ends
+    def endElement(self, tag):
+        if self.CurrentData == "Author":
+            print("Author:", self.Author)
+
+        elif self.CurrentData == "Title":
+            print("Title:", self.Title)
+
+        elif self.CurrentData == "Genre":
+            print("Genre:", self.Genre)
+
+        elif self.CurrentData == "Price":
+            print("Price:", self.Price)
+
+        elif self.CurrentData == "PublishDate":
+            print("PublishDate:", self.PublishDate)
+
+        elif self.CurrentData == "Description":
+            print("Description:", self.Description)
+        self.CurrentData = ""
+
+
+    # Call when a character is read
+    def characters(self, content):
+        if self.CurrentData == "Author":
+            self.Author = content
+        elif self.CurrentData == "Title":
+            self.Title = content
+        elif self.CurrentData == "Genre":
+            self.Genre = content
+        elif self.CurrentData == "Price":
+            self.Price = content
+        elif self.CurrentData == "PublishDate":
+            self.PublishDate = content
+        elif self.CurrentData == "Description":
+            self.Description = content
+
+
+if (__name__ == "__main__"):
+    # create an XMLReader
+    parser = xml.sax.make_parser()
+    # turn off namepsaces
+    parser.setFeature(xml.sax.handler.feature_namespaces, 0)
+    # override the default ContextHandler
+    Handler = Book()
+    parser.setContentHandler(Handler)
+    parser.parse("Books.xml")
+© 2020 GitHub, Inc.
