@@ -1,0 +1,17 @@
+import os
+
+sciezka = input("Podaj sciezke: ")
+
+def listuj(katalog):
+
+   for element in os.listdir(katalog):
+
+       pliki = os.path.join(katalog, element);
+
+       print (pliki)
+
+       if os.path.isdir(pliki):
+           listuj(pliki)
+
+
+listuj(sciezka)
