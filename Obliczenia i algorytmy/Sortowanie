@@ -1,0 +1,19 @@
+from random import randint
+'losowanie randomowych liczb'
+ile = int (input("Ile liczb wylosowac? \n"))
+lista = []
+for i in range(0,ile):
+    lista.append(randint(0,10000))
+print(lista)
+
+    
+'Pusta lista'
+lista2=[]
+
+'sortowanie malejaco'
+while lista != []:
+    a= max(lista)
+    lista2.append(a)
+    lista.remove(a)
+    
+print ("Posortowana lista: ",lista2)
