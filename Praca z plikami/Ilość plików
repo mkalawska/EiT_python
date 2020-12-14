@@ -1,0 +1,10 @@
+import os
+
+print(os.getcwd())
+DIR = 'dev'
+numberFiles = 0
+lista = list(os.listdir(DIR))
+
+suma = []
+print("Lista plikow: ", lista)
+print("Ilosc plikow: ", len(lista))
