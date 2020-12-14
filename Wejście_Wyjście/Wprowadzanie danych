@@ -1,0 +1,2 @@
+dane = input("Podaj imie, nazwisko, date urodzenia: ")
+print("Moje dane to:", dane)
