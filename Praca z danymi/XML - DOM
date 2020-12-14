@@ -1,0 +1,20 @@
+from xml.dom import minidom
+xmldoc = minidom.parse("Books.xml")
+
+catalog = xmldoc.documentElement
+
+books=catalog.getElementsByTagName("Book")
+for book in books:
+    print(book.getElementsByTagName("Author")[0].firstChild.data)
+    print(book.getElementsByTagName("Title")[0].firstChild.data)
+    print(book.getElementsByTagName("Genre")[0].firstChild.data)
+    print(book.getElementsByTagName("Price")[0].firstChild.data)
+    print(book.getElementsByTagName("PublishDate")[0].firstChild.data)
+    print(book.getElementsByTagName("Description")[0].firstChild.data)
+
+firstChild = books[0].getElementsByTagName("Title")[0].firstChild
+firstChild.data = "Jaka to melodia"
+books[0].getElementsByTagName("Title")[0].appendChild(firstChild)
+
+with open("parsowanie.xml", "w") as file:
+    file.write(xmldoc.toxml())
