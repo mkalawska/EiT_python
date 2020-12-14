@@ -1,0 +1,11 @@
+import os
+
+plik = open("odczyt.txt", "r", encoding="utf8")
+zapisz = open("zapis.txt",  "w", encoding="utf8")
+
+
+for linia in plik:
+    zapisz.write(linia.replace("się","").replace(" i ", " ").replace("oraz", "").replace("nigdy", "").replace("dlaczego", ""))
+
+zapisz.close()
+plik.close()
