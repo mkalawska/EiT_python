@@ -1,0 +1,13 @@
+from PIL import Image
+
+image1 = Image.open(r'C:\Tapeta1.jpg')
+image1.save(r'C:\Tapeta1.png')
+
+image2 = Image.open(r'C:\Tapeta2.jpg')
+image2.save(r'C:\Tapeta2.png')
+
+image3 = Image.open(r'C:\Tapeta3.jpg')
+image3.save(r'C:\Tapeta3.png')
+
+image4 = Image.open(r'C:\Tapeta4.jpg')
+image4.save(r'C:\Tapeta4.png')
