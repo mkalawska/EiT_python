@@ -1,0 +1,22 @@
+import numpy as np
+from random import randint
+
+macierz1 = []
+macierz1 = np.random.random((128,128))
+print("Macierz 1: ")
+print(macierz1)
+
+print("\n\n")
+
+'losowanie dla drugiej macierzy'
+macierz2 = []
+macierz2 = np.random.random((128,128))
+print("Macierz 2 : ")
+print(macierz2)
+
+
+'Dodawanie macierzy'
+suma=[] #pusta macierz
+suma=macierz1+macierz2
+print("Suma macierzy: ")
+print(suma)
