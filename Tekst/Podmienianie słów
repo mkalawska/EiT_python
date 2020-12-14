@@ -1,0 +1,12 @@
+
+import os
+
+plik = open("odczyt.txt", "r", encoding="utf8")
+podmiana = open("podmiana.txt",  "w", encoding="utf8")
+
+
+for linia in plik:
+    podmiana.write(linia.replace(" i ", " oraz ").replace("oraz", "i").replace("nigdy", "prawie nigdy").replace("dlaczego", "czemu"))
+
+podmiana.close()
+plik.close()
