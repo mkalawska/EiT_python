@@ -1,0 +1,11 @@
+print ("Wprowadz kod 4-cyfrowy")
+kod1 = input()
+
+
+print ("Podaj kod 4-cyfrowy")
+kod2 = input()
+
+if kod1==kod2:
+    print("Gratulacje! Poprawne haslo")
+else:
+    print("Bledne haslo!")
