@@ -40,7 +40,7 @@ class Philosopher(threading.Thread):
         print('%s kończy jedzenie.' % self.name)
 
 
-def DiningPhilosophers():
+def Gra():
     forks = [threading.Lock() for n in range(5)]
     philosopherNames = ('Ania', 'Basia', 'Kasia', 'Gosia', 'Zosia')
 
@@ -55,4 +55,4 @@ def DiningPhilosophers():
     print("Koniec.")
 
 
-DiningPhilosophers()
+Gra()
